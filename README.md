@@ -62,11 +62,43 @@ You will need to install the following locally:
 Complete a month cost analysis of each Azure resource to give an estimate total cost using the table below:
 
 | Azure Resource | Service Tier | Monthly Cost |
-| ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
-
+| Azure Postgres Database | Basic - Single Server | 50.14 USD |
+| Azure Service Bus | Basic Service Plan - B1 | 0.05 USD|
+| Azure Functions | Consumption Tier |...|
+| Storage Accounts | Storage (general purpose v1)| ...   |
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
 # Udacity-Project3
+Azure Web App:
+1. App Type:
+
+Monolithic Applications: If your application is monolithic and doesn't have a need for microservices architecture, a standard Azure Web App might be suitable.
+Microservices: For more complex applications with a microservices architecture, consider breaking down the functionalities into separate services, and deploy each as a separate Azure Web App.
+2. Scalability:
+
+Vertical Scaling: If your application can be scaled vertically (by adding more resources to a single instance), Azure Web App can handle this well.
+Horizontal Scaling: For applications that require horizontal scaling (adding more instances of the application), Azure Web App's built-in load balancing and auto-scaling features are beneficial.
+3. Managed Services vs. Customization:
+
+Managed Services: If you prefer a fully managed environment with less infrastructure management, Azure Web App provides a platform that abstracts away the underlying infrastructure details.
+Customization: If you need more control over the underlying infrastructure (like installing custom software or configuring advanced networking settings), you might consider other Azure services like Azure Virtual Machines.
+4. Development Stack:
+
+Built-in Stacks: Azure Web App supports various built-in stacks for different programming languages and frameworks. Choose the stack that aligns with your development preferences.
+Azure Function:
+5. Event-Driven Architecture:
+
+Event-Driven Applications: Azure Functions are well-suited for event-driven architectures. If your application involves reacting to events or triggers (e.g., HTTP requests, message queues, timers), Azure Functions can be a good fit.
+6. Serverless Architecture:
+
+Serverless: If you want to leverage a serverless architecture, where you pay only for the actual compute resources used, Azure Functions is a strong choice. It automatically scales based on demand.
+7. Stateless Operations:
+
+Stateless Functions: Azure Functions are designed to be stateless, meaning they're well-suited for short-lived operations that don't require maintaining state between function executions.
+8. Integration with Other Azure Services:
+
+Integration Points: Azure Functions seamlessly integrates with other Azure services. If your application relies on various Azure services, Azure Functions can be used to glue different components together.
+9. Microservices:
+
+Microservices Architecture: If your application follows a microservices architecture, you can deploy individual functions to handle specific microservices tasks, allowing for a modular and scalable approach.
+In summary, the choice of architecture for Azure Web App and Azure Function depends on your specific application requirements, development preferences, and scalability needs. It's often beneficial to mix and match these services based on the distinct characteristics of your application components.

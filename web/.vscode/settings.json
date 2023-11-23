@@ -34,5 +34,7 @@
 	"azureFunctions.scmDoBuildDuringDeployment": true,
 	"azureFunctions.pythonVenv": ".venv",
 	"azureFunctions.projectLanguage": "Python",
-	"azureFunctions.projectRuntime": "~4"
+	"azureFunctions.projectRuntime": "~4",
+	"appService.defaultWebAppToDeploy": "/subscriptions/d2c169d1-9569-4a29-af20-cf8071ec7ccd/resourceGroups/canltn-rs/providers/Microsoft.Web/sites/canltn-web",
+	"appService.deploySubpath": "."
 }
